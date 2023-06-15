@@ -23,13 +23,14 @@ fetch(weatherURL)
         return response.json();
     })
     .then(function (data) {
+        //localStorage.setItem("ll", String(data.location.lat + "%2C" + data.location.lon));
         currTemperature.textContent = "Current Temperature: " + data.current.temp_c + " ºC";
         weatherDesc.textContent = "Current Weather: " + data.current.condition.text;
         document.getElementById("weatherIcon").src = "https:" + String(data.current.condition.icon);
         localStorage.setItem("lastTemp", data.current.temp_c);
         localStorage.setItem("lastCond", data.current.condition.text);
         localStorage.setItem("weatherIcon", data.current.condition.icon);
-        localStorage.setItem("ll", String(data.location.lat + "%2C" + data.location.lon));
+        getHotel(String(data.location.lat + "%2C" + data.location.lon));
     });
 
 // Collect city name from the text box
