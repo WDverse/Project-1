@@ -28,7 +28,7 @@ fetch(weatherURL)
 
 // Collect city name from the text box
 function setCity() {
-    localStorage.setItem("lastCity",document.getElementById("exampleInputEmail1").value);
+    localStorage.setItem("lastCity",document.getElementById("exampleDataList").value);
 }
 
 // Clickable buttons relevant to weatehr functions
