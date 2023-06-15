@@ -35,5 +35,7 @@ function setCity() {
     localStorage.setItem("lastCity",document.getElementById("exampleDataList").value);
 }
 
+
 // Clickable buttons relevant to weather functions
 searchButton.addEventListener("click",setCity);
+
