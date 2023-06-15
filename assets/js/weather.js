@@ -21,8 +21,8 @@ fetch(weatherURL)
     return response.json();
 })
 .then(function(data) {
-    currTemperature.textContent = "Current Temperature in "+lastCity+": "+data.current.temp_c+" C";
-    weatherDesc.textContent = "Current Weather in "+lastCity+": "+data.current.condition.text;
+    currTemperature.textContent = "Current Temperature: "+data.current.temp_c+" ºC";
+    weatherDesc.textContent = "Current Weather: "+data.current.condition.text;
     document.getElementById("weatherIcon").src = "https:"+String(data.current.condition.icon);
     localStorage.setItem("lastTemp", data.current.temp_c);
     localStorage.setItem("lastCond", data.current.condition.text);
