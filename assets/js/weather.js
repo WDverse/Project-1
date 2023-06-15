@@ -9,6 +9,7 @@ var weatherDesc = document.getElementById("weatherDesc");
 var lastCity = localStorage.getItem("lastCity");
 var lastTemp = localStorage.getItem("lastTemp");
 var lastCond = localStorage.getItem("lastCond");
+document.getElementById("weatherIcon").src = "https:"+String(localStorage.getItem("weatherIcon"));
 city.textContent = lastCity;
 
 
@@ -22,14 +23,17 @@ fetch(weatherURL)
 .then(function(data) {
     currTemperature.textContent = "Current Temperature in "+lastCity+": "+data.current.temp_c+" C";
     weatherDesc.textContent = "Current Weather in "+lastCity+": "+data.current.condition.text;
+    document.getElementById("weatherIcon").src = "https:"+String(data.current.condition.icon);
     localStorage.setItem("lastTemp", data.current.temp_c);
     localStorage.setItem("lastCond", data.current.condition.text);
+    localStorage.setItem("weatherIcon", data.current.condition.icon);
+
 });
 
 // Collect city name from the text box
 function setCity() {
-    localStorage.setItem("lastCity",document.getElementById("exampleInputEmail1").value);
+    localStorage.setItem("lastCity",document.getElementById("exampleDataList").value);
 }
 
-// Clickable buttons relevant to weatehr functions
+// Clickable buttons relevant to weather functions
 searchButton.addEventListener("click",setCity);
