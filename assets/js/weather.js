@@ -27,7 +27,7 @@ fetch(weatherURL)
     localStorage.setItem("lastTemp", data.current.temp_c);
     localStorage.setItem("lastCond", data.current.condition.text);
     localStorage.setItem("weatherIcon", data.current.condition.icon);
-
+    localStorage.setItem("ll", String(data.location.lat+"%2C"+data.location.lon));
 });
 
 // Collect city name from the text box
