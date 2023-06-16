@@ -1,0 +1,28 @@
+#hotels{
+    display: flex;
+    width: fit-content;
+}
+
+.hotels-div{
+    background-color: white;
+    margin: 1%;
+    margin-bottom: 5%;
+    color: black;
+    border-radius: 5px;
+    box-shadow: 0px 1px 5px 1px grey; ;
+
+}
+
+.hotel-address{
+    font-style: italic;
+    color: grey;  
+}
+
+li{
+    list-style-type: none;
+    /* text-align: center; */
+}
+
+/* .hotel-info{
+    text-align: center;
+} */

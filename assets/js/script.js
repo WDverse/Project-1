@@ -19,9 +19,12 @@ function getHotel(lat) {
                 console.log(data.results[i].name);
                 console.log(data.results[i].location.address);
                 var hotelsDiv = document.createElement("div");
+                hotelsDiv.classList.add("hotels-div");
                 var hotelInfoEl = document.createElement("ul");
+                hotelInfoEl.classList.add("hotel-info");
                 var hotelName = document.createElement("li");
                 var hotelAddress = document.createElement("li");
+                hotelAddress.classList.add("hotel-address");
                 hotelName.textContent = data.results[i].name;
                 hotelAddress.textContent = data.results[i].location.address;
                 hotelInfoEl.appendChild(hotelName);
