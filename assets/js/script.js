@@ -1,5 +1,6 @@
 var apiKey = 'fsq37w8dUN6194EZq28wvpwF7CQ3pCaNe8lPlAzGIEymFyw='
 var hotelEl = document.getElementById("hotels");
+// hotelEl.style.display = "none";
 
 var requestUrl = "https://api.foursquare.com/v3/places/search?query=hotel&ll=43%2C-81";
 fetch(requestUrl, {
@@ -32,7 +33,8 @@ fetch(requestUrl, {
 
 
 function getApi() {
-
+    // event.preventDefault();
+    hotelEl.style.display = "block";
 }
 
 searchButton.addEventListener("click", getApi);
