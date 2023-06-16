@@ -1,13 +1,12 @@
-#weather-card{
+#weather-card {
     width: 20%;
     background-color: #0d6efd;
     text-align: center;
     margin: auto;
     border-radius: 5px;
-    box-shadow:0px 1px 5px 1px grey; ;
-    font-family:Arial, Helvetica, sans-serif;
+    box-shadow: 0px 1px 5px 1px grey;
+    font-family: Arial, Helvetica, sans-serif;
     color: white;
     margin-bottom: 50px;
     margin-top: -4%;
 }
-
