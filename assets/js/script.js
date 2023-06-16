@@ -1,3 +1,4 @@
+
 function getHotel(lat) {
 
     var apiKey = 'fsq37w8dUN6194EZq28wvpwF7CQ3pCaNe8lPlAzGIEymFyw='
@@ -11,6 +12,7 @@ function getHotel(lat) {
             'Access-Control-Allow-Origin': '*',
         }
     })
+
         .then(function (response) {
             return response.json();
         })
