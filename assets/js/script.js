@@ -34,10 +34,11 @@ function getHotel(lat) {
                 hotelAddress.classList.add("hotel-address");
                 hotelName.textContent = data.results[i].name;
                 addressText.textContent = "Address:";
+                hotelAddress.textContent = data.results[i].location.address;
                 if (data.results[i].location.address == undefined) {
                     addressText.style.display = "none";
+                    hotelAddress.textContent = "Sorry! Address not found";
                 }
-                hotelAddress.textContent = data.results[i].location.address;
                 hotelInfoEl.appendChild(hotelName);
                 hotelInfoEl.appendChild(addressText);
                 hotelInfoEl.appendChild(hotelAddress);
@@ -49,7 +50,6 @@ function getHotel(lat) {
                 hotelEl.appendChild(hotelHeader);
                 hotelHeader.classList.add("hotel-header");
                 hotelHeader.textContent = "Check out these hotels in" + city + ":";
-                console.log(data)
             }
             hotelHead();
         })
