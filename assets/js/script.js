@@ -1,3 +1,6 @@
+var inputEl = document.getElementById("exampleDataList");
+var city = inputEl.value;
+console.log("city name:" + city);
 
 function getHotel(lat) {
 
@@ -12,7 +15,7 @@ function getHotel(lat) {
             'Access-Control-Allow-Origin': '*',
         }
     })
-
+        // Get the the hotel names and addresses for the searched city and display on webpage
         .then(function (response) {
             return response.json();
         })
@@ -25,21 +28,31 @@ function getHotel(lat) {
                 var hotelInfoEl = document.createElement("ul");
                 hotelInfoEl.classList.add("hotel-info");
                 var hotelName = document.createElement("li");
+                var addressText = document.createElement("li");
+                addressText.classList.add("address-text");
                 var hotelAddress = document.createElement("li");
                 hotelAddress.classList.add("hotel-address");
                 hotelName.textContent = data.results[i].name;
+                addressText.textContent = "Address:";
+                if (data.results[i].location.address == undefined) {
+                    addressText.style.display = "none";
+                }
                 hotelAddress.textContent = data.results[i].location.address;
                 hotelInfoEl.appendChild(hotelName);
+                hotelInfoEl.appendChild(addressText);
                 hotelInfoEl.appendChild(hotelAddress);
                 hotelsDiv.appendChild(hotelInfoEl);
                 hotelEl.appendChild(hotelsDiv);
             }
-            console.log(data)
+            function hotelHead() {
+                var hotelHeader = document.getElementById("hotel-header");
+                hotelEl.appendChild(hotelHeader);
+                hotelHeader.classList.add("hotel-header");
+                hotelHeader.textContent = "Check out these hotels in" + city + ":";
+                console.log(data)
+            }
+            hotelHead();
         })
 
 }
-// function getApi() {
 
-// }
-
-// searchButton.addEventListener("click", getApi);
