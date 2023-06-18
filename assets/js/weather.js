@@ -32,23 +32,8 @@ function getWeather(cityName) {
             localStorage.setItem("lastTemp", data.current.temp_c);
             localStorage.setItem("lastCond", data.current.condition.text);
             localStorage.setItem("weatherIcon", data.current.condition.icon);
+            
+            // Collect lat/lon from weather API to pass into the hotel search
             getHotel(String(data.location.lat + "%2C" + data.location.lon));
         });
 }
-// Collect city name from the text box
-function setCity(event) {
-    event.preventDefault();
-    // localStorage.setItem("lastCity", document.getElementById("exampleDataList").value);
-    var cityName = document.getElementById("exampleDataList").value;
-    getWeather(cityName);
-    weatherCard.style.display = 'block';
-    // Display hotel header
-    var hotelHeader = document.getElementById("hotel-header");
-    hotelHeader.classList.add("hotel-header");
-    hotelHeader.textContent = "Check out these hotels in " + cityName + ":";
-}
-
-
-// Clickable buttons relevant to weather functions
-searchButton.addEventListener("click", setCity);
-
