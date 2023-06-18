@@ -45,13 +45,6 @@ function getHotel(lat) {
                 hotelsDiv.appendChild(hotelInfoEl);
                 hotelEl.appendChild(hotelsDiv);
             }
-            function hotelHead() {
-                var hotelHeader = document.getElementById("hotel-header");
-                hotelEl.appendChild(hotelHeader);
-                hotelHeader.classList.add("hotel-header");
-                hotelHeader.textContent = "Check out these hotels in" + city + ":";
-            }
-            hotelHead();
         })
 
 }

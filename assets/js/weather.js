@@ -15,25 +15,25 @@ document.getElementById("weatherIcon").src = "https:" + String(localStorage.getI
 cityEl.textContent = lastCity;
 
 function getWeather(cityName) {
-// Get the weather for the most recently searched city
-var weatherURL = "http://api.weatherapi.com/v1/current.json?key=8eec726f852f4f3d83e03157231306&q=" + cityName;
+    // Get the weather for the most recently searched city
+    var weatherURL = "http://api.weatherapi.com/v1/current.json?key=8eec726f852f4f3d83e03157231306&q=" + cityName;
 
-fetch(weatherURL)
-    .then(function (response) {
-        return response.json();
-    })
-    .then(function (data) {
+    fetch(weatherURL)
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (data) {
 
-        cityEl.textContent = cityName;
+            cityEl.textContent = cityName;
 
-        currTemperature.textContent = "Current Temperature: " + data.current.temp_c + " ºC";
-        weatherDesc.textContent = "Current Weather: " + data.current.condition.text;
-        document.getElementById("weatherIcon").src = "https:" + String(data.current.condition.icon);
-        localStorage.setItem("lastTemp", data.current.temp_c);
-        localStorage.setItem("lastCond", data.current.condition.text);
-        localStorage.setItem("weatherIcon", data.current.condition.icon);
-        getHotel(String(data.location.lat + "%2C" + data.location.lon));
-    });
+            currTemperature.textContent = "Current Temperature: " + data.current.temp_c + " ºC";
+            weatherDesc.textContent = "Current Weather: " + data.current.condition.text;
+            document.getElementById("weatherIcon").src = "https:" + String(data.current.condition.icon);
+            localStorage.setItem("lastTemp", data.current.temp_c);
+            localStorage.setItem("lastCond", data.current.condition.text);
+            localStorage.setItem("weatherIcon", data.current.condition.icon);
+            getHotel(String(data.location.lat + "%2C" + data.location.lon));
+        });
 }
 // Collect city name from the text box
 function setCity(event) {
@@ -42,7 +42,10 @@ function setCity(event) {
     var cityName = document.getElementById("exampleDataList").value;
     getWeather(cityName);
     weatherCard.style.display = 'block';
-
+    // Display hotel header
+    var hotelHeader = document.getElementById("hotel-header");
+    hotelHeader.classList.add("hotel-header");
+    hotelHeader.textContent = "Check out these hotels in " + cityName + ":";
 }
 
 
