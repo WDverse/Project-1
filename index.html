@@ -2,141 +2,100 @@
 <html lang="en" data-bs-theme="auto">
 
 <head>
-
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="">
   <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
   <meta name="generator" content="Hugo 0.112.5">
   <title>Tourist Trap</title>
-
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="./assets/css/style.css" rel="stylesheet">
   <link href="./assets/css/weather.css" rel="stylesheet">
   <link href="./assets/css/hotel.css" rel="stylesheet">
-
 </head>
 
 <body>
 
-  <!-- HEADER -->
-  <header data-bs-theme="dark">
-    <div class="navbar navbar-dark bg-dark shadow-sm">
-      <div class="container">
-        <a href="#" class="navbar-brand d-flex align-items-center">
-          <strong>Tourist Trap</strong>
-        </a>
-      </div>
-    </div>
-  </header>
-  <!-- HEADER END -->
   <main>
-
-    <section class="py-5 text-center container">
-      <div class="row py-lg-5">
-        <div class="col-lg-7 col-md-8 mx-auto">
-          <h1 class="fw-light">DO MORE WITH TOURIST TRAP</h1>
-          <p class="lead text-body-secondary"></p>
-
-          <form>
-            <div class="form-group mb-4">
-              <input class="form-control" list="datalistOptions" id="exampleDataList"
-                placeholder="Find your next adventure">
-              <datalist id="datalistOptions">
-                <option value="New York City">
-                <option value="Los Angeles">
-                <option value="Chicago">
-                <option value="Houston">
-                <option value="Toronto">
-                <option value="Mexico City">
-                <option value="Miami">
-                <option value="Montreal">
-                <option value="Vancouver">
-                <option value="Atlanta">
-                <option value="San Francisco">
-                <option value="Dallas">
-                <option value="Boston">
-                <option value="Seattle">
-                <option value="Washington, D.C.">
-                <option value="Philadelphia">
-                <option value="Denver">
-                <option value="Phoenix">
-                <option value="San Diego">
-                <option value="Las Vegas">
-                <option value="Calgary">
-                <option value="Edmonton">
-                <option value="Ottawa">
-                <option value="Quebec City">
-                <option value="Monterrey">
-                <option value="Guadalajara">
-                <option value="Cancun">
-                <option value="Santo Domingo">
-                <option value="San Juan">
-                <option value="London">
-                <option value="Paris">
-                <option value="Madrid">
-                <option value="Berlin">
-                <option value="Rome">
-                <option value="Athens">
-                <option value="Vienna">
-                <option value="Amsterdam">
-                <option value="Lisbon">
-                <option value="Budapest">
-                <option value="Prague">
-                <option value="Warsaw">
-                <option value="Stockholm">
-                <option value="Copenhagen">
-                <option value="Helsinki">
-                <option value="Oslo">
-                <option value="Dublin">
-                <option value="Brussels">
-                <option value="Moscow">
-                <option value="Istanbul">
-                <option value="Zurich">
-                <option value="Geneva">
-                <option value="Barcelona">
-                <option value="Munich">
-                <option value="Venice">
-                <option value="Florence">
-                <option value="Edinburgh">
-                <option value="Dubrovnik">
-                <option value="Reykjavik">
-                <option value="Belgrade">
-                <option value="Accra">
-              </datalist>
-            </div>
-            <button type="submit" class="btn btn-primary btn-lg" id="searchButton">Search</button>
-          </form>
-        </div>
+    <div class="container py-4">
+      <header class="pb-3 mb-4 border-bottom">
+        <a href="/" class="d-flex align-items-center text-body-emphasis text-decoration-none">
+            <img src="./assets/images/logo.png" alt="Logo" width="39">
+            <span class="fs-4">Tourist Trap</span>
+        </a>
+    </header>
+    <div class="p-5 mb-4 bg-body-tertiary rounded-3">
+      <div class="container-fluid py-5 text-center ">
+          <h1 class="display-5 fw-bold">DO MORE WITH TOURIST TRAP</h1>
+          <p class="col-md-12 fs-4">Find your next adventure with us!</p>
+          <div class="col-lg-7 col-md-8 mx-auto">
+              <input class="form-control form-control-lg mb-4" id="searchHotels" placeholder="Search...">
+              <button class="btn btn-primary btn-lg" type="button" id="searchButton">Search</button>
+          </div>
       </div>
-    </section>
-
-    <!-- Weather Section -->
-    <section id="weather-card">
-      <h2 id="cityName"></h2>
-      <p id="temperature">Current Temperature: </p>
-      <p id="weatherDesc">Current Weather: </p>
-      <img src="./assets/images/sun.png" id="weatherIcon">
-    </section>
-
-    <header id="hotel-header"></header>
-    <section id="hotels"></section>
-
-  </main>
-
-  <footer class="text-body-secondary">
-    <div class="container">
-      <p class="mb-0">&copy; 2023 Tourist Trap Team</p>
+  </div>
+  <div class="row align-items-md-stretch">
+    <div class="col-md-4">
+      <div id="weather-card">
+        <!-- WEATHER CARD -->
+        <div class="card card-weather text-center">
+            <div class="card-body">
+                <div class="weather-date-location">
+                    <h2 id="cityName">Ottawa, ON, Canada</h2>
+                    <p class="cardDay">Sunday | June 18th 2023</p>
+                </div>
+                <div class="weather-icon mt-3 mb-4">
+                    <img src="https://cdn.weatherapi.com/weather/64x64/day/116.png" id="weatherIcon">
+                </div>
+                <div class="weather-data">
+                    <h4 id="temperature" class="display-3 fw-bold">22<span class="symbol">°</span>C</h4>
+                    <p id="weatherDesc" class="phrase">Current Weather: Partly cloudy</p>
+                </div>
+            </div>
+            <div>
+            </div>
+        </div>
+        <!-- WEATHER CARD -->
     </div>
-  </footer>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
-    crossorigin="anonymous"></script>
-  <script src="./assets/js/script.js"></script>
-  <script src="./assets/js/weather.js"></script>
+    </div>
+    <div class="col-md-8">
+        <!-- HOTEL DETAILS  -->
+        <div id="hotel">
+          <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+            <div class="col-auto d-none d-lg-block">
+              <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+            </div>
+            <div class="col p-4 d-flex flex-column position-static">
+              <strong class="d-inline-block mb-2 text-primary-emphasis">World</strong>
+              <h3 class="mb-0">Featured post</h3>
+              <div class="mb-1 text-body-secondary">Nov 12</div>
+              <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+              <a href="#" class="icon-link gap-1 icon-link-hover stretched-link">
+                Continue reading
+                <svg class="bi"><use xlink:href="#chevron-right"/></svg>
+              </a>
+            </div>
+            
+          </div>
+        </div>
+        <!-- HOTEL DETAILS  -->
+    </div>
+</div>
 
+<footer class="pt-3 mt-4 text-body-secondary border-top">
+  &copy; 2023 Tourist Trap Team
+</footer>
 
+    </div>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="./assets/js/script.js"></script>
+    <!-- <script src="./assets/js/weather.js"></script> -->
+  
 </body>
 
 </html>
