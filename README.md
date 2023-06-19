@@ -6,36 +6,45 @@ Tourist trap is a webpage that will give you a list of ten hotels within the cit
 
 ## Usage
 
-A user will type the name of a city into the search bar. Popular cities are available in an autocomplete dropdown box. For cities with the same name in multiple countries, users can find the city they are looking for by adding the country information after a comma. Ex) Kingston, Canada vs. Kingston, Jamaica.
+A user will type the name of a city into the search bar. City names are available in an autocomplete dropdown box. For cities with the same name in multiple countries, users can find the city they are looking for by adding the country information after a comma or by selecting it from the autocomplete dropdown. Ex) Kingston, Canada vs. Kingston, Jamaica.
 
-Upon hitting enter or clicking the search button, the current weather will appear, followed by a list of ten hotels in or near the city with their basic information.
+Upon clicking the search button, the current weather will appear, followed by a list of ten hotels in or near the city with some basic information.
 
 ## Visual
-Start page
-assets/images/homePage.png
+Home Page on arrival
+![Image of home page on arrival](./assets/images/webpage_arrival.jpeg)
 
-Search field auto-fill
-assets/images/autoFill.png
+Example of the search field auto-fill functionality
+![Image of auto-fill feature](./assets/images/autoFill.png)
 
-End reuslt
-assets/images/withSearchResults.png
+Web Page after search has been performed
+![Image of webpage after a search](./assets/images/webpage_search.jpeg)
+
+Web Page mobile view after a search
+![Image of mobile view](./assets/images/webpage_mobile.jpeg)
 
 
 
 ## APIs
 
 Foursquare API
+
 Weather API
+
 Google Places API
 
 ## URLs
 
+[Repository URL: ](https://github.com/WDverse/Tourist-trap)
 
+[Deployed Webpage: ](https://wdverse.github.io/tourist-trap)
 
 ## Credits
 
 Emmanuel Appiagyei
+
 Sivanishanthar Ramachandran
+
 Matthew Taylor
 
 ## References
