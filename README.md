@@ -36,7 +36,7 @@ Google Places API
 
 Github Repository: https://github.com/WDverse/Tourist-trap
 
-Deployed Webpage: https://wdverse.github.io/tourist-trap
+Deployed Webpage: https://wdverse.github.io/Tourist-trap
 
 ## Credits
 
