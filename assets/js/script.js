@@ -19,8 +19,6 @@ function getHotel(lat) {
       })
       .then(function (data) {
         for (i = 0; i < 10; i++) {
-          // console.log(data.results[i].name);
-          // console.log(data.results[i].location.address);
           
           // Created a div to append the following bootstrap class 
           var rowDiv = document.createElement("div");
@@ -64,12 +62,6 @@ function getHotel(lat) {
   
           hotelEl.appendChild(rowDiv);
         }
-        console.log(data);
       });
   }
-  // function getApi() {
-  
-  // }
-  
-  // searchButton.addEventListener("click", getApi);
   

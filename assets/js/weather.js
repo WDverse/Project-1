@@ -10,14 +10,6 @@ var weatherDesc = document.getElementById("weatherDesc");
 var weatherCard = document.getElementById("weather-card");
 weatherCard.style.display = "none";
 
-// Set content for weather elements and buttons
-var lastCity = localStorage.getItem("lastCity");
-var lastTemp = localStorage.getItem("lastTemp");
-var lastCond = localStorage.getItem("lastCond");
-document.getElementById("weatherIcon").src =
-  "https:" + String(localStorage.getItem("weatherIcon"));
-cityEl.textContent = lastCity;
-
 function getWeather(cityName) {
   // Get the weather for the most recently searched city
   var weatherURL =
@@ -31,22 +23,21 @@ function getWeather(cityName) {
     .then(function (data) {
       cityEl.textContent = cityName;
 
+      // Populate the weatehr card with relevant info
       currTemperature.innerHTML =
         data.current.temp_c + '<span class="symbol">&deg;</span>C';
       weatherDesc.textContent =
         "Current Weather: " + data.current.condition.text;
       document.getElementById("weatherIcon").src =
         "https:" + String(data.current.condition.icon);
-      localStorage.setItem("lastTemp", data.current.temp_c);
-      localStorage.setItem("lastCond", data.current.condition.text);
-      localStorage.setItem("weatherIcon", data.current.condition.icon);
+
+    // Call the hotel function to populate hotel list simultaneously with weather
       getHotel(String(data.location.lat + "%2C" + data.location.lon));
     });
 }
-// Collect city name from the text box
+// Collect city name from the text box and use it to collect and display information
 function setCity(event) {
   event.preventDefault();
-  // localStorage.setItem("lastCity", document.getElementById("searchHotels").value);
   var cityName = document.getElementById("searchHotels").value;
   getWeather(cityName);
   weatherCard.style.display = "block";
