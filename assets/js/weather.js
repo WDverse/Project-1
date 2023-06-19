@@ -13,7 +13,7 @@ weatherCard.style.display = "none";
 function getWeather(cityName) {
   // Get the weather for the most recently searched city
   var weatherURL =
-    "http://api.weatherapi.com/v1/current.json?key=8eec726f852f4f3d83e03157231306&q=" +
+    "https://api.weatherapi.com/v1/current.json?key=8eec726f852f4f3d83e03157231306&q=" +
     cityName;
 
   fetch(weatherURL)
@@ -23,9 +23,9 @@ function getWeather(cityName) {
     .then(function (data) {
       cityEl.textContent = cityName;
 
-      // Populate the weatehr card with relevant info
-      currTemperature.innerHTML =
-        data.current.temp_c + '<span class="symbol">&deg;</span>C';
+      // Populate the weather card with relevant info
+      currTemperature.textContent =
+        data.current.temp_c + '°C';
       weatherDesc.textContent =
         "Current Weather: " + data.current.condition.text;
       document.getElementById("weatherIcon").src =
