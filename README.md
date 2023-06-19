@@ -11,14 +11,15 @@ A user will type the name of a city into the search bar. Popular cities are avai
 Upon hitting enter or clicking the search button, the current weather will appear, followed by a list of ten hotels in or near the city with their basic information.
 
 ## Visual
-Start page
-assets/images/homePage.png
+![Start Page](./assets/images/homePage.png)
 
-Search field auto-fill
-assets/images/autoFill.png
 
-End reuslt
-assets/images/withSearchResults.png
+![Search field auto-fill](./assets/images/autoFill.png)
+
+
+![End result](./assets/images/withSearchResult.png)
+
+
 
 
 
@@ -43,3 +44,8 @@ Matthew Taylor
 [This site helped to format the fetch request for the foursquare api](https://maximorlov.com/tips/convert-curl-to-javascript-fetch/)
 
 [This site helped fix an error that appeared in the foursquare API fetch request](https://stackoverflow.com/questions/51017702/enable-cors-in-fetch-api)
+
+## Tests
+
+Here is the link to the webpage:
+[Tourist Trap](https://wdverse.github.io/Tourist-trap/)
