@@ -11,6 +11,14 @@ A user will type the name of a city into the search bar. Popular cities are avai
 Upon hitting enter or clicking the search button, the current weather will appear, followed by a list of ten hotels in or near the city with their basic information.
 
 ## Visual
+Start page
+assets/images/homePage.png
+
+Search field auto-fill
+assets/images/autoFill.png
+
+End reuslt
+assets/images/withSearchResults.png
 
 
 
@@ -18,6 +26,7 @@ Upon hitting enter or clicking the search button, the current weather will appea
 
 Foursquare API
 Weather API
+Google Places API
 
 ## URLs
 
