@@ -51,3 +51,8 @@ Matthew Taylor
 [This site helped to format the fetch request for the foursquare api](https://maximorlov.com/tips/convert-curl-to-javascript-fetch/)
 
 [This site helped fix an error that appeared in the foursquare API fetch request](https://stackoverflow.com/questions/51017702/enable-cors-in-fetch-api)
+
+## Tests
+
+Here is the link to the webpage:
+[Tourist Trap](https://wdverse.github.io/Tourist-trap/)
