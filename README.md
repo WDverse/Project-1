@@ -11,6 +11,7 @@ A user will type the name of a city into the search bar. City names are availabl
 Upon clicking the search button, the current weather will appear, followed by a list of ten hotels in or near the city with some basic information.
 
 ## Visual
+
 Home Page on arrival
 ![Image of home page on arrival](./assets/images/webpage_arrival.jpeg)
 
@@ -23,8 +24,6 @@ Web Page after search has been performed
 Web Page mobile view after a search
 ![Image of mobile view](./assets/images/webpage_mobile.jpeg)
 
-
-
 ## APIs
 
 Foursquare API
@@ -35,9 +34,9 @@ Google Places API
 
 ## URLs
 
-[Repository URL: ](https://github.com/WDverse/Tourist-trap)
+Github Repository: https://github.com/WDverse/Tourist-trap
 
-[Deployed Webpage: ](https://wdverse.github.io/tourist-trap)
+Deployed Webpage: https://wdverse.github.io/tourist-trap
 
 ## Credits
 
